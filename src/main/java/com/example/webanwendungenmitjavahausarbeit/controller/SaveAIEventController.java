@@ -15,6 +15,7 @@ import java.io.IOException;
 public class SaveAIEventController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String title = request.getParameter("title");
         String location = request.getParameter("location");
         int participants = Integer.parseInt(request.getParameter("participants"));
@@ -28,12 +29,11 @@ public class SaveAIEventController extends HttpServlet {
         LocalTime startTime = LocalTime.parse(startTimeStr);
         LocalTime endTime = LocalTime.parse(endTimeStr);
 
-        String description = "AI-Suggested Event in " + location + ".\n"
-                + "Participants: " + participants + "\n"
-                + "Budget: €" + budget + "\n"
-                + "Experience a fantastic AI-recommended event!";
+        String description = "AI-Suggested Event: " + location +
+        "Participants: " + participants + "Budget: €" + budget +
+                "Experience a fantastic AI-recommended event!";
 
-        Event event = new Event(eventDate, startTime, endTime, description, title,0,0, userId);
+        Event event = new Event(eventDate, startTime, endTime, location, title,0,0, userId);
 
         AIEventRecommendationService.saveAIEvent(event);
 

@@ -79,10 +79,8 @@ public class AIEventRecommendationService {
                 String itemName = itemObject.getString("item");
                 System.out.println("XXX ITEM NAME: " + itemName);
                 EinkaufslisteItem einkaufsItem = new EinkaufslisteItem(einkaufliste,itemName);
-                System.out.println("XXXX ive created the item");
-                System.out.println("XXXX ive created the itemDAO");
                 itemDAO.addItem(einkaufsItem);
-                System.out.println("XXXX ive added the item");
+
             }
 
             String description = "Your recommended shopping list for " + gericht + " within a budget of " + price + " EUR";
