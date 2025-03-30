@@ -30,10 +30,9 @@ public class SaveAIEventController extends HttpServlet {
         LocalTime endTime = LocalTime.parse(endTimeStr);
 
         String description = "AI-Suggested Event: " + location +
-        "Participants: " + participants + "Budget: €" + budget +
-                "Experience a fantastic AI-recommended event!";
+        "Participants: " + participants + " and a Budget of " + budget + "€.";
 
-        Event event = new Event(eventDate, startTime, endTime, location, title,0,0, userId);
+        Event event = new Event(eventDate, startTime, endTime, description, title,0,0, userId);
 
         AIEventRecommendationService.saveAIEvent(event);
 

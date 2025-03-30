@@ -31,7 +31,7 @@ public class UserController extends HttpServlet {
             if (session != null) {
                 session.invalidate();
             }
-            request.getRequestDispatcher("/WEB-INF/logout.jsp").forward(request, response); // Redirect to logout.jsp
+            request.getRequestDispatcher("/WEB-INF/logout.jsp").forward(request, response);
         }
     }
 
@@ -67,7 +67,7 @@ public class UserController extends HttpServlet {
 
             boolean success = userService.register(username, email, password);
             if (success) {
-                response.sendRedirect("/login");
+                request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             } else {
                 request.setAttribute("error", "User already exists.");
                 request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
