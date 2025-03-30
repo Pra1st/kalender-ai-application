@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee" version="5.0">
+    <display-name>Webanwendungen mit Java</display-name>
+
+    <!-- Calendar Controller -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>CalendarController</servlet-name>
+        <servlet-class>com.example.webanwendungenmitjavahausarbeit.controller.CalendarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalendarController</servlet-name>
+        <url-pattern>/calendar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CalendarController</servlet-name>
+        <servlet-class>com.example.webanwendungenmitjavahausarbeit.controller.CalendarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalendarController</servlet-name>
+        <url-pattern>/addEntry</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.example.webanwendungenmitjavahausarbeit.controller.UserController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+</web-app>
