@@ -17,6 +17,8 @@ import java.time.LocalTime;
 public class SaveEventController extends HttpServlet {
     private EventService eventService = new EventService();
     private UserService userService = new UserService();
+
+    // saves a Event
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String dateParam = request.getParameter("eventDate");

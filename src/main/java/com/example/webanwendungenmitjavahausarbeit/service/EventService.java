@@ -18,11 +18,12 @@ public class EventService {
 
     private EventDAO eventDAO = new EventDAO();
 
-
+    // add a new event
     public void addEvent(Event event) {
         eventDAO.addEvent(event);
     }
 
+    // get event by datestring and userid
     public Event getEventByDate(String dateString, Long userid) {
         if (dateString != null && !dateString.isEmpty()) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // Adjust the format as per your date format
@@ -33,6 +34,7 @@ public class EventService {
         return null;
     }
 
+    // get first event by LocalDate date and userid
     public Event getEventByDate(LocalDate eventDate, Long userId) {
         List<Event> events = eventDAO.getEventsByDate(eventDate, userId);
         if (events != null && !events.isEmpty()) {
@@ -41,11 +43,12 @@ public class EventService {
         return null;
     }
 
+    // get Eventlist with eventDAO
     public List<Event> getEventsByDate(LocalDate eventDate, Long userid) {
         return eventDAO.getEventsByDate(eventDate, userid);
     }
 
-
+     // get all events using event DAO function
     public List<Event> getAllEvents() {
         return eventDAO.getAllEvents();
     }

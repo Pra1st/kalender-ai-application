@@ -23,6 +23,7 @@ public class EventDetailController extends HttpServlet {
     private UserService userService = new UserService();
     private EventDAO eventDAO = new EventDAO();
     @Override
+    // Display the events
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String dateParam = request.getParameter("date");
         String action = request.getParameter("action");
@@ -50,7 +51,7 @@ public class EventDetailController extends HttpServlet {
         }
         request.getRequestDispatcher("/WEB-INF/eventDetail.jsp").forward(request, response);
     }
-
+    // delete existing event
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");

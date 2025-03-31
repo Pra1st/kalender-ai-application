@@ -12,6 +12,7 @@ public class EinkaufslisteDAO {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("calendarPU");
 
+    //adds a new einkaufliste into the db
     public void addEinkaufsliste(Einkaufsliste einkaufsliste) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
@@ -27,6 +28,7 @@ public class EinkaufslisteDAO {
         }
     }
 
+    // get a einkafusliste by id
     public Einkaufsliste getEinkaufsliste(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         Einkaufsliste einkaufsliste = em.find(Einkaufsliste.class, id);
@@ -34,6 +36,7 @@ public class EinkaufslisteDAO {
         return einkaufsliste;
     }
 
+    // get a einkaufsliste by userid and date
     public List<Einkaufsliste> getEinkaufslistenByUserAndDate(Long userId, LocalDate date) {
         EntityManager em = entityManagerFactory.createEntityManager();
 
@@ -56,6 +59,7 @@ public class EinkaufslisteDAO {
         return listen;
     }
 
+    //delete a einkaufliste and all items within
     public void deleteEinkaufsliste(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = em.getTransaction();

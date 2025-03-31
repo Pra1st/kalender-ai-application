@@ -2,6 +2,7 @@ package com.example.webanwendungenmitjavahausarbeit.model;
 
 import jakarta.persistence.*;
 
+// hibernate einkaufsliste_items class
 @Entity
 @Table(name = "einkaufsliste_items")
 public class EinkaufslisteItem {

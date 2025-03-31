@@ -8,6 +8,7 @@ public class EinkaufslisteItemDAO {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("calendarPU");
 
+    //Adds a einkauflistenitem
     public void addItem(EinkaufslisteItem item) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
@@ -23,6 +24,7 @@ public class EinkaufslisteItemDAO {
         }
     }
 
+    //deletes a einkaufsliste item
     public void deleteItem(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = em.getTransaction();

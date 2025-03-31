@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @WebServlet("/calendar")
 public class CalendarController extends HttpServlet {
     private EventDAO eventDAO = new EventDAO();
-
+    //displays the calendar.sjp
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/calendar.jsp").forward(request, response);

@@ -3,6 +3,7 @@ package com.example.webanwendungenmitjavahausarbeit.model;
 
 import jakarta.persistence.*;
 
+// hibernate users class
 @Entity
 @Table(name = "users")
 public class User {

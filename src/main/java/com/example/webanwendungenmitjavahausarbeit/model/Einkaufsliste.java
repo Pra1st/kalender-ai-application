@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+// hibernate einkaufslisten class
 @Entity
 @Table(name = "einkaufslisten")
 public class Einkaufsliste {

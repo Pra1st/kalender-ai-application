@@ -13,6 +13,7 @@ import java.io.IOException;
 
 @WebServlet("/save-ai-event")
 public class SaveAIEventController extends HttpServlet {
+    // saves ai events
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

@@ -12,6 +12,7 @@ public class EventDAO {
 
     private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("calendarPU");
 
+    // add a new Event
     public void addEvent(Event event) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
@@ -30,6 +31,7 @@ public class EventDAO {
         }
     }
 
+    //get all Events of a surtain Date and userid
     public List<Event> getEventsByDate(LocalDate date, Long userid) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         List<Event> events = null;
@@ -48,6 +50,7 @@ public class EventDAO {
         return events;
     }
 
+    //get all events
     public List<Event> getAllEvents() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         List<Event> events = null;
@@ -63,6 +66,7 @@ public class EventDAO {
         return events;
     }
 
+    //delete a specific event
     public void deleteEvent(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
@@ -83,6 +87,7 @@ public class EventDAO {
         }
     }
 
+    //close the entityManagerFactory Connection
     public void close() {
         if (entityManagerFactory != null && entityManagerFactory.isOpen()) {
             entityManagerFactory.close();

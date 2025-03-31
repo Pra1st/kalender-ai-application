@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class CreateEinkaufslisteController extends HttpServlet {
 
     private EinkaufslisteDAO einkaufslisteDAO = new EinkaufslisteDAO();
-
+    // create a einkaufsliste
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String title = request.getParameter("title");

@@ -18,6 +18,7 @@ public class UserController extends HttpServlet {
         this.userService = new UserService();
     }
 
+    //get on login, register nad logout pages
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
@@ -35,6 +36,7 @@ public class UserController extends HttpServlet {
         }
     }
 
+    // handles login, register and logout requests
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();

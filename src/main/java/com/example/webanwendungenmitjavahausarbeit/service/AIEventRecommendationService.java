@@ -21,6 +21,7 @@ public class AIEventRecommendationService {
 
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("calendarPU");
 
+    //use ai Service to get a Event recomendation
     public static Event recommendEvent(String city, int people, double budget, String type, LocalDate date, LocalTime starttime,  LocalTime endtime, Long userid) {
         String prompt = "Suggest an event in " + city + " for " + people +
                 " people which can be done exactly on " + date + " at " + starttime +
@@ -54,6 +55,7 @@ public class AIEventRecommendationService {
         return aiEvent;
     }
 
+    //use ai Service to get a Einkaufliste recomendation
     public static Einkaufsliste recommendEinkaufsliste(String gericht,LocalDate date, int price, String listIdParam, String userid) {
         EinkaufslisteItemDAO itemDAO = new EinkaufslisteItemDAO();
         EinkaufslisteDAO einkaufslisteDAO = new EinkaufslisteDAO();
@@ -96,6 +98,7 @@ public class AIEventRecommendationService {
         }
     }
 
+    // saves a AIEnvent
     public static void saveAIEvent(Event event) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -104,6 +107,7 @@ public class AIEventRecommendationService {
         em.close();
     }
 
+    //saves a AI Einkaufsliste
     public static void saveAIListe(Einkaufsliste einkaufsliste) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -112,6 +116,7 @@ public class AIEventRecommendationService {
         em.close();
     }
 
+    //get all ai saved events
     public static List<Event> getSavedAIEvents() {
         EntityManager em = emf.createEntityManager();
         List<Event> aiEvents = em.createQuery("SELECT e FROM Event e WHERE e.userid = 0", Event.class).getResultList();

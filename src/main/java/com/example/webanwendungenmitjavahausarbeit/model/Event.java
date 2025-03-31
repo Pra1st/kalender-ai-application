@@ -8,7 +8,7 @@ import java.time.chrono.ChronoLocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
-
+// hibernate events class
 @Entity
 @Table(name = "events")
 public class Event {

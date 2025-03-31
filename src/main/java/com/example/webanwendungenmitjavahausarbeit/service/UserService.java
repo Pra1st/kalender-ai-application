@@ -13,6 +13,7 @@ public class UserService {
         this.userDAO = new UserDAO();
     }
 
+    //register a new user
     public boolean register(String username, String email, String password) {
         if (userDAO.getUserByUsername(username) != null) {
             return false;
@@ -23,6 +24,7 @@ public class UserService {
         return true;
     }
 
+    //authenticate a user
     public boolean authenticate(String username, String password, HttpServletRequest request) {
         User user = userDAO.getUserByUsername(username);
 

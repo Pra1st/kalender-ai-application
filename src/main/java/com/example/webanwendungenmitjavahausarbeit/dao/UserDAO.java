@@ -9,6 +9,7 @@ import jakarta.persistence.TypedQuery;
 public class UserDAO {
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("calendarPU");
 
+    //adds a new user
     public void registerUser(User user) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -20,6 +21,7 @@ public class UserDAO {
         }
     }
 
+    //gets user class from the username
     public User getUserByUsername(String username) {
         EntityManager em = emf.createEntityManager();
         try {

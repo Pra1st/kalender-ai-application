@@ -17,9 +17,10 @@ import java.util.List;
 @WebServlet("/ai-events")
 public class AIEventController extends HttpServlet {
 
+    // add ai event
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long userId = 0L; //(Long) request.getSession().getAttribute("userId");
+        Long userId = 0L;
         String city = request.getParameter("city");
         int people = Integer.parseInt(request.getParameter("people"));
         double budget = Double.parseDouble(request.getParameter("budget"));
@@ -53,7 +54,7 @@ public class AIEventController extends HttpServlet {
 
         request.getRequestDispatcher("/WEB-INF/ai-events.jsp").forward(request, response);
     }
-
+    //display ai-events.jsp
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Event> savedAIEvents = AIEventRecommendationService.getSavedAIEvents();
