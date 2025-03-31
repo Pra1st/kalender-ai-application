@@ -17,7 +17,7 @@
   <title>Event Details</title>
   <style>
     body {
-      background-color: #121212;
+      background-color: #e0e0e0;
       font-family: 'Arial', sans-serif;
       color: #fff;
       margin: 0;

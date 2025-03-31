@@ -17,7 +17,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: #000;
+            background: #e0e0e0;
             color: #fff;
             margin: 0;
             padding: 0;

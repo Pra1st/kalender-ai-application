@@ -15,8 +15,8 @@
     <style>
         /* Set the entire page background to grey */
         body {
-            background-color: #2e2e2e; /* Dark Grey Background */
-            color: #ffffff;
+            background-color: #e0e0e0; /* Dark Grey Background */
+            color: #e0e0e0;
         }
 
         /* Center the container and make it black */
