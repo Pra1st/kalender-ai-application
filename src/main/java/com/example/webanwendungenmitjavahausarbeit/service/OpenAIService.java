@@ -14,6 +14,7 @@ public class OpenAIService {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = ""; // Replace with your actual API key
 
+    // get ai recomendation with Openai gpt 4
     public static String getRecommendation(String prompt) {
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost request = new HttpPost(API_URL);
